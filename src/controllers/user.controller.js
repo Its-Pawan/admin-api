@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 const options = {
     httpOnly: true,
     secure: true,
-    sameSite: 'Lax'
+    sameSite: 'None'
 }
 const generateAccessAndRefreshToken = async (userId) => {
     try {
