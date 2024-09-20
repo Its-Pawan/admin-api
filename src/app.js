@@ -3,7 +3,7 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import { LIMIT } from "./constants.js"
 const app = express()
- 
+
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     methods: 'GET,POST,PUT,PATCH ,DELETE,OPTIONS',
@@ -28,9 +28,9 @@ import versionRouter from './routes/version.routes.js'
 
 
 // routes declaration
-app.use("/", (req, res) => {
-    res.send('Hello World!', process.env.CORS_ORIGIN)
-})
+app.get("/", (req, res) => {
+    res.send(`Hello World! Origin: ${process.env.CORS_ORIGIN}`);
+});
 app.use("/api/v1/users", userRouter)
 app.use("/api/v1/blogs", blogRouter)
 app.use("/api/v1/projects", projectRouter)
