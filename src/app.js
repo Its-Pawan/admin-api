@@ -4,6 +4,8 @@ import cookieParser from 'cookie-parser'
 import { LIMIT } from "./constants.js"
 const app = express()
 
+console.log(process.env.CORS_ORIGIN);
+
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
     methods: 'GET,POST,PUT,PATCH ,DELETE,OPTIONS',
